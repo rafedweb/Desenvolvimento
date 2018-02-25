@@ -1,10 +1,10 @@
 ﻿using ProjetoModeloDDD.Domain.Entities;
-using ProjetoModeloDDD.Domain.Interfaces;
+using ProjetoModeloDDD.Domain.Interfaces.Repositories;
 
 
 namespace ProjetoModeloDDD.Infra.Data.Repositories
 {
-    class ClienteRepository : RepositoryBase<Cliente>, IClienteRepository
+   public class ClienteRepository : RepositoryBase<Cliente>, IClienteRepository
     {
     }
 }
