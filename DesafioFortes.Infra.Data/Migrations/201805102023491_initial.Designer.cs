@@ -13,7 +13,7 @@ namespace ProjetoModeloDDD.Infra.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201805101651568_initial"; }
+            get { return "201805102023491_initial"; }
         }
         
         string IMigrationMetadata.Source
