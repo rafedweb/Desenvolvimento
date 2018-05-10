@@ -1,0 +1,5 @@
+C:\Users\Rafael\Pictures\DesafioFortes\ProjetoModeloDDD.Domain\obj\Debug\DesafioFortes.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Rafael\Pictures\DesafioFortes\ProjetoModeloDDD.Domain\bin\Debug\DesafioFortes.Domain.dll
+C:\Users\Rafael\Pictures\DesafioFortes\ProjetoModeloDDD.Domain\bin\Debug\DesafioFortes.Domain.pdb
+C:\Users\Rafael\Pictures\DesafioFortes\ProjetoModeloDDD.Domain\obj\Debug\DesafioFortes.Domain.dll
+C:\Users\Rafael\Pictures\DesafioFortes\ProjetoModeloDDD.Domain\obj\Debug\DesafioFortes.Domain.pdb
