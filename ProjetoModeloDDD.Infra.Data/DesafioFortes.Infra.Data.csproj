@@ -7,8 +7,8 @@
     <ProjectGuid>{B39D8C86-5CCE-452F-A409-3E73243CE05F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProjetoModeloDDD.Infra.Data</RootNamespace>
-    <AssemblyName>ProjetoModeloDDD.Infra.Data</AssemblyName>
+    <RootNamespace>DesafioFortes.Infra.Data</RootNamespace>
+    <AssemblyName>DesafioFortes.Infra.Data</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

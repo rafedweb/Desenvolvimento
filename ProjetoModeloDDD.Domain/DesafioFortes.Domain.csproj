@@ -7,8 +7,8 @@
     <ProjectGuid>{D5B912D6-C829-4DDD-BC4F-3EB8196AC443}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ProjetoModeloDDD.Domain</RootNamespace>
-    <AssemblyName>ProjetoModeloDDD.Domain</AssemblyName>
+    <RootNamespace>DesafioFortes.Domain</RootNamespace>
+    <AssemblyName>DesafioFortes.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

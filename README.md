@@ -1,1 +1,1 @@
-# ProjetoModeloDDD# OportunidadeGrupoFortes
+# OportunidadeGrupoFortes
