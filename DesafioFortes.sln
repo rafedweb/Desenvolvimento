@@ -13,15 +13,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 -Domain", "3 -Domain", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 -Infra", "4 -Infra", "{96180131-3231-422B-B8EF-28A57ABAC758}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioFortes.MVC", "ProjetoModeloDDD.MVC\DesafioFortes.MVC.csproj", "{56F6EC42-789A-49D6-BA6D-584F8F7BCEF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioFortes.MVC", "DesafioFortes.MVC\DesafioFortes.MVC.csproj", "{56F6EC42-789A-49D6-BA6D-584F8F7BCEF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioFortes.Domain", "ProjetoModeloDDD.Domain\DesafioFortes.Domain.csproj", "{D5B912D6-C829-4DDD-BC4F-3EB8196AC443}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioFortes.Domain", "DesafioFortes.Domain\DesafioFortes.Domain.csproj", "{D5B912D6-C829-4DDD-BC4F-3EB8196AC443}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 -Data", "4.1 -Data", "{ECFB1B26-F716-4223-8184-70E116DA7CF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioFortes.Infra.Data", "ProjetoModeloDDD.Infra.Data\DesafioFortes.Infra.Data.csproj", "{B39D8C86-5CCE-452F-A409-3E73243CE05F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioFortes.Infra.Data", "DesafioFortes.Infra.Data\DesafioFortes.Infra.Data.csproj", "{B39D8C86-5CCE-452F-A409-3E73243CE05F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioFortes.Application", "ProjetoModeloDDD.Application\DesafioFortes.Application.csproj", "{667491C4-D79B-4A6B-93F1-0C896CE41E4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesafioFortes.Application", "DesafioFortes.Application\DesafioFortes.Application.csproj", "{667491C4-D79B-4A6B-93F1-0C896CE41E4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

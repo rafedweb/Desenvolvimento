@@ -53,7 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjetoModeloDDD.Domain\DesafioFortes.Domain.csproj">
+    <ProjectReference Include="..\DesafioFortes.Domain\DesafioFortes.Domain.csproj">
       <Project>{D5B912D6-C829-4DDD-BC4F-3EB8196AC443}</Project>
       <Name>DesafioFortes.Domain</Name>
     </ProjectReference>

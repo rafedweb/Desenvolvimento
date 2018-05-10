@@ -67,7 +67,7 @@
     <Compile Include="Repositories\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjetoModeloDDD.Domain\DesafioFortes.Domain.csproj">
+    <ProjectReference Include="..\DesafioFortes.Domain\DesafioFortes.Domain.csproj">
       <Project>{d5b912d6-c829-4ddd-bc4f-3eb8196ac443}</Project>
       <Name>DesafioFortes.Domain</Name>
     </ProjectReference>
