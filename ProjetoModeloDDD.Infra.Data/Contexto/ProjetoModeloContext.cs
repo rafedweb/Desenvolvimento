@@ -1,22 +1,24 @@
-﻿using ProjetoModeloDDD.Domain.Entities;
-using ProjetoModeloDDD.Infra.Data.EntityConfig;
+﻿using DesafioFortes.Domain.Entities;
+using DesafioFortes.Infra.Data.EntityConfig;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Linq;
 
-namespace ProjetoModeloDDD.Infra.Data.Contexto
+namespace DesafioFortes.Infra.Data.Contexto
 {
     public class ProjetoModeloContext : DbContext
     {
         public ProjetoModeloContext()
-            :base("ProjetoModeloDDD")
+            :base("DesafioFortes")
         {
 
         }
 
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Pedido> Pedido { get; set; }
+        public DbSet<Fornecedor> Fornecedor { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -31,6 +33,8 @@ namespace ProjetoModeloDDD.Infra.Data.Contexto
 
             modelBuilder.Configurations.Add(new ClienteConfiguration());
             modelBuilder.Configurations.Add(new ProdutoConfiguration());
+            modelBuilder.Configurations.Add(new PedidoConfiguration());
+            modelBuilder.Configurations.Add(new FornecedorConfiguration());
         }
 
         public override int SaveChanges()

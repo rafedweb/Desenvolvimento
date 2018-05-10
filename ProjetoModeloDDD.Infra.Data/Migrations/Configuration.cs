@@ -5,14 +5,14 @@ namespace ProjetoModeloDDD.Infra.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Contexto.ProjetoModeloContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<DesafioFortes.Infra.Data.Contexto.ProjetoModeloContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Contexto.ProjetoModeloContext context)
+        protected override void Seed(DesafioFortes.Infra.Data.Contexto.ProjetoModeloContext context)
         {
             //  This method will be called after migrating to the latest version.
 

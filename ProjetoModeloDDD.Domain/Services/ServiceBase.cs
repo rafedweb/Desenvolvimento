@@ -1,12 +1,12 @@
-﻿using ProjetoModeloDDD.Domain.Interfaces.Repositories;
-using ProjetoModeloDDD.Domain.Interfaces.Services;
+﻿using DesafioFortes.Domain.Interfaces.Repositories;
+using DesafioFortes.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoModeloDDD.Domain.Services
+namespace DesafioFortes.Domain.Services
 {
     public class ServiceBase<TEntity> : IDisposable, IServiceBase<TEntity> where TEntity : class
     {

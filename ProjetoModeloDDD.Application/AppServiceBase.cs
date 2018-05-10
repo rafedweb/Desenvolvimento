@@ -1,10 +1,10 @@
-﻿using ProjetoModeloDDD.Application.Interface;
-using ProjetoModeloDDD.Domain.Interfaces.Services;
-using ProjetoModeloDDD.Domain.Services;
+﻿using DesafioFortes.Application.Interface;
+using DesafioFortes.Domain.Interfaces.Services;
+using DesafioFortes.Domain.Services;
 using System;
 using System.Collections.Generic;
 
-namespace ProjetoModeloDDD.Application
+namespace DesafioFortes.Application
 {
     public class AppServiceBase<TEntity> : IDisposable, IAppServiceBase<TEntity> where TEntity : class
     {

@@ -1,7 +1,7 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using ProjetoModeloDDD.Domain.Entities;
+using DesafioFortes.Domain.Entities;
 
-namespace ProjetoModeloDDD.Infra.Data.EntityConfig
+namespace DesafioFortes.Infra.Data.EntityConfig
 {
    public class ProdutoConfiguration : EntityTypeConfiguration<Produto>
     {

@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using ProjetoModeloDDD.Domain.Interfaces.Repositories;
-using ProjetoModeloDDD.Infra.Data.Contexto;
+using DesafioFortes.Domain.Interfaces.Repositories;
+using DesafioFortes.Infra.Data.Contexto;
 using System.Linq;
 using System.Data.Entity;
 
-namespace ProjetoModeloDDD.Infra.Data.Repositories
+namespace DesafioFortes.Infra.Data.Repositories
 {
     public class RepositoryBase<TEntity> : IDisposable, IRepositoryBase<TEntity> where TEntity : class
     {

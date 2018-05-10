@@ -1,7 +1,7 @@
-﻿using ProjetoModeloDDD.Domain.Entities;
+﻿using DesafioFortes.Domain.Entities;
 using System.Data.Entity.ModelConfiguration;
 
-namespace ProjetoModeloDDD.Infra.Data.EntityConfig
+namespace DesafioFortes.Infra.Data.EntityConfig
 {
     class ClienteConfiguration : EntityTypeConfiguration<Cliente>
     {

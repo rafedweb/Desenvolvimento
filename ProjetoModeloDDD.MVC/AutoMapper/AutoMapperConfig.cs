@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace ProjetoModeloDDD.MVC.AutoMapper
+namespace DesafioFortes.MVC.AutoMapper
 {
     public class AutoMapperConfig
     {

@@ -1,5 +1,5 @@
 ﻿
-namespace ProjetoModeloDDD.Domain.Entities
+namespace DesafioFortes.Domain.Entities
 {
    public class Produto
     {
@@ -8,7 +8,9 @@ namespace ProjetoModeloDDD.Domain.Entities
         public decimal Valor { get; set; }
         public bool Disponivel { get; set; }
         public int ClienteID { get; set; }
+        public int FornecedorID { get; set; }
 
         public virtual Cliente Cliente { get; set; }
+        public virtual Fornecedor Fornecedor { get; set; }
     }
 }

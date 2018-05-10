@@ -146,13 +146,17 @@
     <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Controllers\ClientesController.cs" />
+    <Compile Include="Controllers\FornecedorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PedidoController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\ClienteViewModel.cs" />
+    <Compile Include="ViewModels\FornecedorViewModel.cs" />
+    <Compile Include="ViewModels\PedidoViewModel.cs" />
     <Compile Include="ViewModels\ProdutoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -200,6 +204,14 @@
     <Content Include="Views\Produtos\Edit.cshtml" />
     <Content Include="Views\Produtos\Create.cshtml" />
     <Content Include="Views\Produtos\Delete.cshtml" />
+    <Content Include="Views\Fornecedor\Index.cshtml" />
+    <Content Include="Views\Fornecedor\Create.cshtml" />
+    <Content Include="Views\Fornecedor\Edit.cshtml" />
+    <Content Include="Views\Fornecedor\Delete.cshtml" />
+    <Content Include="Views\Pedido\Index.cshtml" />
+    <Content Include="Views\Pedido\Create.cshtml" />
+    <Content Include="Views\Pedido\Edit.cshtml" />
+    <Content Include="Views\Pedido\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -212,17 +224,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjetoModeloDDD.Application\ProjetoModeloDDD.Application.csproj">
+    <ProjectReference Include="..\ProjetoModeloDDD.Application\DesafioFortes.Application.csproj">
       <Project>{667491c4-d79b-4a6b-93f1-0c896ce41e4e}</Project>
-      <Name>ProjetoModeloDDD.Application</Name>
+      <Name>DesafioFortes.Application</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProjetoModeloDDD.Domain\ProjetoModeloDDD.Domain.csproj">
+    <ProjectReference Include="..\ProjetoModeloDDD.Domain\DesafioFortes.Domain.csproj">
       <Project>{d5b912d6-c829-4ddd-bc4f-3eb8196ac443}</Project>
-      <Name>ProjetoModeloDDD.Domain</Name>
+      <Name>DesafioFortes.Domain</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ProjetoModeloDDD.Infra.Data\ProjetoModeloDDD.Infra.Data.csproj">
+    <ProjectReference Include="..\ProjetoModeloDDD.Infra.Data\DesafioFortes.Infra.Data.csproj">
       <Project>{B39D8C86-5CCE-452F-A409-3E73243CE05F}</Project>
-      <Name>ProjetoModeloDDD.Infra.Data</Name>
+      <Name>DesafioFortes.Infra.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

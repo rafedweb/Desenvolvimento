@@ -1,7 +1,7 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(ProjetoModeloDDD.MVC.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(ProjetoModeloDDD.MVC.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(DesafioFortes.MVC.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(DesafioFortes.MVC.App_Start.NinjectWebCommon), "Stop")]
 
-namespace ProjetoModeloDDD.MVC.App_Start
+namespace DesafioFortes.MVC.App_Start
 {
     using System;
     using System.Web;
@@ -70,14 +70,20 @@ namespace ProjetoModeloDDD.MVC.App_Start
             kernel.Bind(typeof(IAppServiceBase<>)).To(typeof(AppServiceBase<>));
             kernel.Bind<IClienteAppService>().To<ClienteAppService>();
             kernel.Bind<IProdutoAppService>().To<ProdutoAppService>();
+            kernel.Bind<IPedidoAppService>().To<PedidoAppService>();
+            kernel.Bind<IFornecedorAppService>().To<FornecedorAppService>();
 
             kernel.Bind(typeof(IServiceBase<>)).To(typeof(ServiceBase<>));
             kernel.Bind<IClienteService>().To<ClienteService>();
             kernel.Bind<IProdutoService>().To<ProdutoService>();
+            kernel.Bind<IPedidoService>().To<PedidoService>();
+            kernel.Bind<IFornecedorService>().To<FornecedorService>();
 
             kernel.Bind(typeof(IRepositoryBase<>)).To(typeof(RepositoryBase<>));
             kernel.Bind<IClienteRepository>().To<ClienteRepository>();
             kernel.Bind<IProdutoRepository>().To<ProdutoRepository>();
+            kernel.Bind<IPedidoRepository>().To<PedidoRepository>();
+            kernel.Bind<IFornecedorRepository>().To<FornecedorRepository>();
 
         }        
     }

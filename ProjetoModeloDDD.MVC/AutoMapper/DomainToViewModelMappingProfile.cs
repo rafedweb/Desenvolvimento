@@ -1,11 +1,8 @@
-﻿
+﻿using AutoMapper;
+using DesafioFortes.Domain.Entities;
+using DesafioFortes.MVC.ViewModels;
 
-
-using AutoMapper;
-using ProjetoModeloDDD.Domain.Entities;
-using ProjetoModeloDDD.MVC.ViewModels;
-
-namespace ProjetoModeloDDD.MVC.AutoMapper 
+namespace DesafioFortes.MVC.AutoMapper 
 {
     public class DomainToViewModelMappingProfile : Profile
     {
@@ -18,6 +15,8 @@ namespace ProjetoModeloDDD.MVC.AutoMapper
         {
             Mapper.CreateMap<ClienteViewModel, Cliente>();
             Mapper.CreateMap<ProdutoViewModel, Produto>();
+            Mapper.CreateMap<FornecedorViewModel, Fornecedor>();
+            Mapper.CreateMap<PedidoViewModel, Pedido>();
         }
     }
 }

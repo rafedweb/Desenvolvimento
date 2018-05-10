@@ -51,31 +51,34 @@
   <ItemGroup>
     <Compile Include="Contexto\ProjetoModeloContext.cs" />
     <Compile Include="EntityConfig\ClienteConfiguration.cs" />
+    <Compile Include="EntityConfig\FornecedorConfiguration.cs" />
+    <Compile Include="EntityConfig\PedidoConfiguration.cs" />
     <Compile Include="EntityConfig\ProdutoConfiguration.cs" />
-    <Compile Include="Migrations\201801131837266_inicial.cs" />
-    <Compile Include="Migrations\201801131837266_inicial.Designer.cs">
-      <DependentUpon>201801131837266_inicial.cs</DependentUpon>
+    <Compile Include="Migrations\201805101651568_initial.cs" />
+    <Compile Include="Migrations\201805101651568_initial.Designer.cs">
+      <DependentUpon>201805101651568_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\ClienteRepository.cs" />
+    <Compile Include="Repositories\FornecedorRepository.cs" />
+    <Compile Include="Repositories\PedidoRepository.cs" />
     <Compile Include="Repositories\ProdutoRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjetoModeloDDD.Domain\ProjetoModeloDDD.Domain.csproj">
+    <ProjectReference Include="..\ProjetoModeloDDD.Domain\DesafioFortes.Domain.csproj">
       <Project>{d5b912d6-c829-4ddd-bc4f-3eb8196ac443}</Project>
-      <Name>ProjetoModeloDDD.Domain</Name>
+      <Name>DesafioFortes.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801131837266_inicial.resx">
-      <DependentUpon>201801131837266_inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805101651568_initial.resx">
+      <DependentUpon>201805101651568_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

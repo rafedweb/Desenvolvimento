@@ -1,7 +1,7 @@
-﻿using ProjetoModeloDDD.Domain.Entities;
+﻿using DesafioFortes.Domain.Entities;
 
 
-namespace ProjetoModeloDDD.Domain.Interfaces.Repositories
+namespace DesafioFortes.Domain.Interfaces.Repositories
 {
   public interface IClienteRepository : IRepositoryBase<Cliente>
     {

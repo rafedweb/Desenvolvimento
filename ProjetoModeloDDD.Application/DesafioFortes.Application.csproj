@@ -42,16 +42,20 @@
   <ItemGroup>
     <Compile Include="AppServiceBase.cs" />
     <Compile Include="ClienteAppService.cs" />
+    <Compile Include="FornecedorAppService.cs" />
     <Compile Include="Interface\IAppServiceBase.cs" />
     <Compile Include="Interface\IClienteAppService.cs" />
+    <Compile Include="Interface\IFornecedorAppService.cs" />
+    <Compile Include="Interface\IPedidoAppService.cs" />
     <Compile Include="Interface\IProdutoAppService.cs" />
+    <Compile Include="PedidoAppService.cs" />
     <Compile Include="ProdutoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProjetoModeloDDD.Domain\ProjetoModeloDDD.Domain.csproj">
+    <ProjectReference Include="..\ProjetoModeloDDD.Domain\DesafioFortes.Domain.csproj">
       <Project>{D5B912D6-C829-4DDD-BC4F-3EB8196AC443}</Project>
-      <Name>ProjetoModeloDDD.Domain</Name>
+      <Name>DesafioFortes.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

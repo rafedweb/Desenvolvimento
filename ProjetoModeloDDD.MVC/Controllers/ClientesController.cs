@@ -4,11 +4,11 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
-using ProjetoModeloDDD.Domain.Entities;
-using ProjetoModeloDDD.MVC.ViewModels;
-using ProjetoModeloDDD.Application.Interface;
+using DesafioFortes.Domain.Entities;
+using DesafioFortes.MVC.ViewModels;
+using DesafioFortes.Application.Interface;
 
-namespace ProjetoModeloDDD.MVC.Controllers
+namespace DesafioFortes.MVC.Controllers
 {
     public class ClientesController : Controller
     {

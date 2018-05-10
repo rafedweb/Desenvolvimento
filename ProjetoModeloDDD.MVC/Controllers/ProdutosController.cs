@@ -1,14 +1,14 @@
 ﻿using AutoMapper;
-using ProjetoModeloDDD.Application.Interface;
-using ProjetoModeloDDD.Domain.Entities;
-using ProjetoModeloDDD.MVC.ViewModels;
+using DesafioFortes.Application.Interface;
+using DesafioFortes.Domain.Entities;
+using DesafioFortes.MVC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ProjetoModeloDDD.MVC.Controllers
+namespace DesafioFortes.MVC.Controllers
 {
     public class ProdutosController : Controller
     {

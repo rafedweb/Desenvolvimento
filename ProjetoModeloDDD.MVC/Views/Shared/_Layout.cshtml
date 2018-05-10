@@ -16,12 +16,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Modelo DDD", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Desafio Fortes", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+                    <li>@Html.ActionLink("Fornecedor", "Index", "Fornecedor")</li>
+                    <li>@Html.ActionLink("Pedido", "Index", "Pedido")</li>
                     <li>@Html.ActionLink("Produtos", "Index", "Produtos")</li>
                 </ul>
             </div>
@@ -31,7 +33,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - ASP.NET Modelo DDD</p>
+            <p>&copy; @DateTime.Now.Year - ASP.NET MVC Desafio Fortes</p>
         </footer>
     </div>
 
