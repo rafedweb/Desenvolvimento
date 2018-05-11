@@ -1,4 +1,4 @@
-namespace ProjetoModeloDDD.Infra.Data.Migrations
+namespace DesafioFortes.Infra.Data.Migrations
 {
     using System;
     using System.Data.Entity;

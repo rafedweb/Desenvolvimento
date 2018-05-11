@@ -12,6 +12,8 @@ namespace DesafioFortes.Domain.Entities
         public DateTime DataPedido { get; set; }
         public decimal ValorTotal { get; set; }
         public int QuantidadeProdutos { get; set; }
+        public List<Produto> podutos { get; set; }
+
         public int ProdutoID { get; set; }
         public int FornecedorID { get; set; }
 

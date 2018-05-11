@@ -10,12 +10,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Valor)
-        </th>
+        </th>       
         <th>
-            @Html.DisplayNameFor(model => model.Disponivel)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ClienteID)
+            Fornecedor
         </th>
         <th></th>
     </tr>
@@ -27,17 +24,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Valor)
-        </td>
+        </td>       
         <td>
-            @Html.DisplayFor(modelItem => item.Disponivel)
+            @Html.DisplayFor(modelItem => item.Fornecedor.RazaoSocial)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ClienteID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProdutoID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProdutoID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProdutoID })
+        <td> 
+            <input type="button" value="Remover Item" class="btn btn-default" onclick="RemoveItemPedido(item.ProdutoID)" />
         </td>
     </tr>
 }

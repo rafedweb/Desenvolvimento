@@ -54,9 +54,9 @@
     <Compile Include="EntityConfig\FornecedorConfiguration.cs" />
     <Compile Include="EntityConfig\PedidoConfiguration.cs" />
     <Compile Include="EntityConfig\ProdutoConfiguration.cs" />
-    <Compile Include="Migrations\201805111532478_inicial.cs" />
-    <Compile Include="Migrations\201805111532478_inicial.Designer.cs">
-      <DependentUpon>201805111532478_inicial.cs</DependentUpon>
+    <Compile Include="Migrations\201805111553279_inicial.cs" />
+    <Compile Include="Migrations\201805111553279_inicial.Designer.cs">
+      <DependentUpon>201805111553279_inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,8 +77,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201805111532478_inicial.resx">
-      <DependentUpon>201805111532478_inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201805111553279_inicial.resx">
+      <DependentUpon>201805111553279_inicial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

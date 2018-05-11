@@ -15,7 +15,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         private readonly IProdutoAppService _produtoApp;
         private readonly IClienteAppService _clienteApp;
         private readonly IPedidoAppService _pedidoAPP;
-        private readonly IFornecedorAppService _fornecedorAPP;
+        private readonly IFornecedorAppService _fornecedorAPP;        
 
         public PedidoController(IProdutoAppService produtoApp, IClienteAppService clienteApp, IPedidoAppService pedidoApp, IFornecedorAppService fornecedorApp)
         {
@@ -44,7 +44,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Create()
         {            
             ViewBag.FornecedorID = new SelectList(_fornecedorAPP.GetAll(), "FornecedorID", "RazaoSocial");
-            ListaProdutos();
+            ViewBag.ProdutoID = new SelectList(_produtoApp.GetAll(), "ProdutoID", "Nome");
+             
             return View();
         }
 
@@ -54,13 +55,14 @@ namespace ProjetoModeloDDD.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                var pedidoDomain = Mapper.Map<PedidoViewModel, Pedido>(pedido);
+                var pedidoDomain = Mapper.Map<PedidoViewModel, Pedido>(pedido);                
                 _pedidoAPP.Add(pedidoDomain);
 
                 return RedirectToAction("Index");
             }
 
             ViewBag.FornecedorID = new SelectList(_fornecedorAPP.GetAll(), "FornecedorID", "RazaoSocial", pedido.FornecedorID);
+            ViewBag.ProdutoID = new SelectList(_produtoApp.GetAll(), "ProdutoID", "Nome");
             return View(pedido);
         }
 
@@ -111,11 +113,24 @@ namespace ProjetoModeloDDD.MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        // GET: Pedido
-        public ActionResult ListaProdutos()
+        [HttpPost]
+        public void AddItensPedido(int produtoID)
         {
-            var produtosViewModel = Mapper.Map<IEnumerable<Produto>, IEnumerable<ProdutoViewModel>>(_produtoApp.GetAll());
-            return PartialView("_ListaProdutos",produtosViewModel);
+            var produto = _produtoApp.GetById(produtoID);         
+         
+        }
+
+        [HttpPost]
+        public ActionResult ListaProdutos(List<string> items)
+        {
+            List<Produto> produtosAdicionados = new List<Produto>();
+           
+            foreach (var item in items)
+            {
+                produtosAdicionados.Add(_produtoApp.GetById(int.Parse(item)));
+            }
+            var produtosViewModel = Mapper.Map<IEnumerable<Produto>, IEnumerable<ProdutoViewModel>>(produtosAdicionados);
+            return PartialView("_ListaProdutos", produtosViewModel);
         }
     }
 }

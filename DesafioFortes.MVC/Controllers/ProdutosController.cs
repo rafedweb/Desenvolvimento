@@ -41,7 +41,7 @@ namespace DesafioFortes.MVC.Controllers
         // GET: Produtos/Create
         public ActionResult Create()
         {
-            ViewBag.FornecedorID = new SelectList(_fornecedorApp.GetAll(), "FornecedorID", "Nome");
+            ViewBag.FornecedorID = new SelectList(_fornecedorApp.GetAll(), "FornecedorID", "RazaoSocial");
 
             return View();
         }
@@ -58,7 +58,7 @@ namespace DesafioFortes.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.FornecedorID = new SelectList(_fornecedorApp.GetAll(), "FornecedorID", "Nome", produto.FornecedorID);
+            ViewBag.FornecedorID = new SelectList(_fornecedorApp.GetAll(), "FornecedorID", "RazaoSocial", produto.FornecedorID);
             return View(produto);
         }
 
@@ -68,7 +68,7 @@ namespace DesafioFortes.MVC.Controllers
             var produto = _produtoApp.GetById(id);
             var produtoViewModel = Mapper.Map<Produto, ProdutoViewModel>(produto);
 
-            ViewBag.FornecedorID = new SelectList(_fornecedorApp.GetAll(), "FornecedorID", "Nome", produto.FornecedorID);
+            ViewBag.FornecedorID = new SelectList(_fornecedorApp.GetAll(), "FornecedorID", "RazaoSocial", produto.FornecedorID);
             return View(produtoViewModel);
         }
 
@@ -85,7 +85,7 @@ namespace DesafioFortes.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ClienteID = new SelectList(_fornecedorApp.GetAll(), "FornecedorID", "Nome", produto.FornecedorID);
+            ViewBag.ClienteID = new SelectList(_fornecedorApp.GetAll(), "FornecedorID", "RazaoSocial", produto.FornecedorID);
             return View(produto);
         }
 
