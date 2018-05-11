@@ -25,8 +25,8 @@ namespace DesafioFortes.MVC.ViewModels
         [DisplayName("Disponível?")]
         public bool Disponivel { get; set; }
 
-        public int ClienteID { get; set; }
+        public int FornecedorID { get; set; }
 
-        public virtual ClienteViewModel Cliente { get; set; }
+        public virtual FornecedorViewModel Fornecedor { get; set; }
     }
 }

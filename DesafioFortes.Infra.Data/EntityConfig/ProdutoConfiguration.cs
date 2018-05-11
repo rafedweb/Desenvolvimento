@@ -16,9 +16,9 @@ namespace DesafioFortes.Infra.Data.EntityConfig
             Property(p => p.Valor)
                 .IsRequired();
 
-            HasRequired(p => p.Cliente)
+            HasRequired(p => p.Fornecedor)
                 .WithMany()
-                .HasForeignKey(p => p.ClienteID);
+                .HasForeignKey(p => p.FornecedorID);
    
         }
     }

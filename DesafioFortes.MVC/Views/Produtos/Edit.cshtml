@@ -44,10 +44,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ClienteID, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.FornecedorID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ClienteID", string.Empty)
-                @Html.ValidationMessageFor(model => model.ClienteID, "", new { @class = "text-danger" })
+                @Html.DropDownList("FornecedorID", string.Empty)
+                @Html.ValidationMessageFor(model => model.FornecedorID, "", new { @class = "text-danger" })
             </div>
         </div>
 

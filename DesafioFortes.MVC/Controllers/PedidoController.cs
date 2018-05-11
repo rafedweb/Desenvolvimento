@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AutoMapper;
+using DesafioFortes.Application.Interface;
+using DesafioFortes.Domain.Entities;
+using DesafioFortes.MVC.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,82 +12,110 @@ namespace ProjetoModeloDDD.MVC.Controllers
 {
     public class PedidoController : Controller
     {
+        private readonly IProdutoAppService _produtoApp;
+        private readonly IClienteAppService _clienteApp;
+        private readonly IPedidoAppService _pedidoAPP;
+        private readonly IFornecedorAppService _fornecedorAPP;
+
+        public PedidoController(IProdutoAppService produtoApp, IClienteAppService clienteApp, IPedidoAppService pedidoApp, IFornecedorAppService fornecedorApp)
+        {
+            _produtoApp = produtoApp;
+            _clienteApp = clienteApp;
+            _pedidoAPP = pedidoApp;
+            _fornecedorAPP = fornecedorApp;
+        }
+
         // GET: Pedido
         public ActionResult Index()
         {
-            return View();
+            var pedidoViewModel = Mapper.Map<IEnumerable<Pedido>, IEnumerable<PedidoViewModel>>(_pedidoAPP.GetAll());
+            return View(pedidoViewModel);
         }
 
         // GET: Pedido/Details/5
         public ActionResult Details(int id)
-        {
-            return View();
+        {            
+            var pedidoViewModel = Mapper.Map<Pedido, PedidoViewModel>(_pedidoAPP.GetById(id));
+
+            return View(pedidoViewModel);
         }
 
         // GET: Pedido/Create
         public ActionResult Create()
-        {
+        {            
+            ViewBag.FornecedorID = new SelectList(_fornecedorAPP.GetAll(), "FornecedorID", "RazaoSocial");
+            ListaProdutos();
             return View();
         }
 
         // POST: Pedido/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(PedidoViewModel pedido)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                var pedidoDomain = Mapper.Map<PedidoViewModel, Pedido>(pedido);
+                _pedidoAPP.Add(pedidoDomain);
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            ViewBag.FornecedorID = new SelectList(_fornecedorAPP.GetAll(), "FornecedorID", "RazaoSocial", pedido.FornecedorID);
+            return View(pedido);
         }
 
         // GET: Pedido/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var pedido = _pedidoAPP.GetById(id);
+            var pedidoViewModel = Mapper.Map<Pedido, PedidoViewModel>(pedido);
+
+            ViewBag.FornecedorID = new SelectList(_fornecedorAPP.GetAll(), "FornecedorID", "RazaoSocial", pedido.FornecedorID);
+            return View(pedidoViewModel);
         }
 
         // POST: Pedido/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(PedidoViewModel pedido)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                var pedidoDomain = Mapper.Map<PedidoViewModel, Pedido>(pedido);
+                _pedidoAPP.Update(pedidoDomain);
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            ViewBag.FornecedorID = new SelectList(_fornecedorAPP.GetAll(), "FornecedorID", "RazaoSocial", pedido.FornecedorID);
+            return View(pedido);
         }
 
         // GET: Pedido/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var pedido = _pedidoAPP.GetById(id);
+            var pedidoViewModel = Mapper.Map<Pedido, PedidoViewModel>(pedido);
+
+            return View(pedidoViewModel);
         }
 
         // POST: Pedido/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            var pedido = _pedidoAPP.GetById(id);
+            _pedidoAPP.Remove(pedido);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
+        }
+
+        // GET: Pedido
+        public ActionResult ListaProdutos()
+        {
+            var produtosViewModel = Mapper.Map<IEnumerable<Produto>, IEnumerable<ProdutoViewModel>>(_produtoApp.GetAll());
+            return PartialView("_ListaProdutos",produtosViewModel);
         }
     }
 }

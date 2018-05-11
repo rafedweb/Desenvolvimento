@@ -34,9 +34,8 @@ namespace DesafioFortes.MVC.Controllers
         }
         // GET: Clientes/Details/5
         public ActionResult Details(int id)
-        {
-            var cliente = _clienteApp.GetById(id);
-            var clienteViewModel = Mapper.Map<Cliente, ClienteViewModel>(cliente);
+        {           
+            var clienteViewModel = Mapper.Map<Cliente, ClienteViewModel>(_clienteApp.GetById(id));
 
             return View(clienteViewModel);
         }
@@ -64,9 +63,8 @@ namespace DesafioFortes.MVC.Controllers
 
         // GET: Clientes/Edit/5
         public ActionResult Edit(int id)
-        {
-            var cliente = _clienteApp.GetById(id);
-            var clienteViewModel = Mapper.Map<Cliente, ClienteViewModel>(cliente);
+        {           
+            var clienteViewModel = Mapper.Map<Cliente, ClienteViewModel>(_clienteApp.GetById(id));
 
             return View(clienteViewModel);
         }
@@ -89,9 +87,8 @@ namespace DesafioFortes.MVC.Controllers
 
         // GET: Clientes/Delete/5
         public ActionResult Delete(int id)
-        {
-            var cliente = _clienteApp.GetById(id);
-            var clienteViewModel = Mapper.Map<Cliente, ClienteViewModel>(cliente);
+        {            
+            var clienteViewModel = Mapper.Map<Cliente, ClienteViewModel>(_clienteApp.GetById(id));
 
             return View(clienteViewModel);
         }
@@ -100,9 +97,8 @@ namespace DesafioFortes.MVC.Controllers
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
-        {
-            var cliente = _clienteApp.GetById(id);
-            _clienteApp.Remove(cliente);
+        {            
+            _clienteApp.Remove(_clienteApp.GetById(id));
 
             return RedirectToAction("Index");
         }

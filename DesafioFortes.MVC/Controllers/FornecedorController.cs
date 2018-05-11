@@ -1,4 +1,7 @@
-﻿using DesafioFortes.Application.Interface;
+﻿using AutoMapper;
+using DesafioFortes.Application.Interface;
+using DesafioFortes.Domain.Entities;
+using DesafioFortes.MVC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,23 +12,32 @@ namespace DesafioFortes.MVC.Controllers
 {
     public class FornecedorController : Controller
     {
-        private readonly IFornecedorAppService _forncedorApp;
+        private readonly IFornecedorAppService _fornecedorApp;
 
         public FornecedorController(IFornecedorAppService fornecedorApp)
         {
-            _forncedorApp = fornecedorApp;
+            _fornecedorApp = fornecedorApp;
         }
 
         // GET: Fornecedor
         public ActionResult Index()
         {
-            return View();
+            var fornecedorViewModel = Mapper.Map<IEnumerable<Fornecedor>, IEnumerable<FornecedorViewModel>>(_fornecedorApp.GetAll());
+            return View(fornecedorViewModel);
+        }
+
+        public ActionResult Especiais()
+        {
+            var fornecedorViewModel = Mapper.Map<IEnumerable<Fornecedor>, IEnumerable<FornecedorViewModel>>(_fornecedorApp.ObterFornecedoresEspeciais());
+
+            return View(fornecedorViewModel);
         }
 
         // GET: Fornecedor/Details/5
         public ActionResult Details(int id)
-        {
-            return View();
+        {            
+            var fornecedorViewModel = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.GetById(id));
+            return View(fornecedorViewModel);
         }
 
         // GET: Fornecedor/Create
@@ -36,62 +48,57 @@ namespace DesafioFortes.MVC.Controllers
 
         // POST: Fornecedor/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(FornecedorViewModel fornecedor)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                var fornecedorDomain = Mapper.Map<FornecedorViewModel, Fornecedor>(fornecedor);
+                _fornecedorApp.Add(fornecedorDomain);
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(fornecedor);
         }
 
         // GET: Fornecedor/Edit/5
         public ActionResult Edit(int id)
-        {
-            return View();
+        {           
+            var fornecedorViewModel = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.GetById(id));
+            return View(fornecedorViewModel);
         }
 
         // POST: Fornecedor/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(FornecedorViewModel fornecedor)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                var fornecedorDomain = Mapper.Map<FornecedorViewModel, Fornecedor>(fornecedor);
+                _fornecedorApp.Update(fornecedorDomain);
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(fornecedor);
         }
 
         // GET: Fornecedor/Delete/5
         public ActionResult Delete(int id)
-        {
-            return View();
+        {         
+            var forncedorViewModel = Mapper.Map<Fornecedor, FornecedorViewModel>(_fornecedorApp.GetById(id));
+
+            return View(forncedorViewModel);
         }
 
         // POST: Fornecedor/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {            
+            _fornecedorApp.Remove(_fornecedorApp.GetById(id));
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
     }
 }

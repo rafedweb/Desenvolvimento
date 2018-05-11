@@ -13,6 +13,14 @@ namespace DesafioFortes.Infra.Data.EntityConfig
         public PedidoConfiguration()
         {
             HasKey(c => c.PedidoID);
+
+            HasRequired(p => p.Fornecedor)
+               .WithMany()
+               .HasForeignKey(p => p.FornecedorID);
+
+            HasRequired(p => p.Produtos)
+               .WithMany()
+               .HasForeignKey(p => p.ProdutoID);
         }
     }
 }

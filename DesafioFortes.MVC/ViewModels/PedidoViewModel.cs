@@ -12,7 +12,6 @@ namespace DesafioFortes.MVC.ViewModels
         [Key]
         public int PedidoID { get; set; }
 
-
         public DateTime DataPedido { get; set; }
 
         [DataType(DataType.Currency)]

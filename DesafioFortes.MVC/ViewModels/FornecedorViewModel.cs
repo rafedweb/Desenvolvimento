@@ -10,15 +10,15 @@ namespace DesafioFortes.MVC.ViewModels
     public class FornecedorViewModel
     {
         [Key]
-        public int FornecedorID { get; set; }
+        public int FornecedorID { get; set; }             
+
+        [Required(ErrorMessage = "Preencha o campo CNPJ")]       
+        public string CNPJ { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo RazaoSocial")]
         [MaxLength(150, ErrorMessage = "Maximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Minimo {0} caracteres")]
         public string RazaoSocial { get; set; }
-
-        [Required(ErrorMessage = "Preencha o campo CNPJ")]       
-        public string CNPJ { get; set; }
 
         [Required(ErrorMessage = "Preencha o campo UF")]
         public string UF { get; set; }

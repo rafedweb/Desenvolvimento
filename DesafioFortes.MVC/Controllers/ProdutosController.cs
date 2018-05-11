@@ -14,12 +14,12 @@ namespace DesafioFortes.MVC.Controllers
     {
 
         private readonly IProdutoAppService _produtoApp;
-        private readonly IClienteAppService _clienteApp;
+        private readonly IFornecedorAppService _fornecedorApp;
 
-        public ProdutosController(IProdutoAppService produtoApp, IClienteAppService clienteApp)
+        public ProdutosController(IProdutoAppService produtoApp, IFornecedorAppService fornecedorApp)
         {
             _produtoApp = produtoApp;
-            _clienteApp = clienteApp;
+            _fornecedorApp = fornecedorApp;
         }
 
         // GET: Produtos
@@ -41,7 +41,7 @@ namespace DesafioFortes.MVC.Controllers
         // GET: Produtos/Create
         public ActionResult Create()
         {
-            ViewBag.ClienteID = new SelectList(_clienteApp.GetAll(), "ClienteID", "Nome");
+            ViewBag.FornecedorID = new SelectList(_fornecedorApp.GetAll(), "FornecedorID", "Nome");
 
             return View();
         }
@@ -58,7 +58,7 @@ namespace DesafioFortes.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ClienteID = new SelectList(_clienteApp.GetAll(), "ClienteID", "Nome", produto.ClienteID);
+            ViewBag.FornecedorID = new SelectList(_fornecedorApp.GetAll(), "FornecedorID", "Nome", produto.FornecedorID);
             return View(produto);
         }
 
@@ -68,7 +68,7 @@ namespace DesafioFortes.MVC.Controllers
             var produto = _produtoApp.GetById(id);
             var produtoViewModel = Mapper.Map<Produto, ProdutoViewModel>(produto);
 
-            ViewBag.ClienteID = new SelectList(_clienteApp.GetAll(), "ClienteID", "Nome", produto.ClienteID);
+            ViewBag.FornecedorID = new SelectList(_fornecedorApp.GetAll(), "FornecedorID", "Nome", produto.FornecedorID);
             return View(produtoViewModel);
         }
 
@@ -85,7 +85,7 @@ namespace DesafioFortes.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ClienteID = new SelectList(_clienteApp.GetAll(), "ClienteID", "Nome", produto.ClienteID);
+            ViewBag.ClienteID = new SelectList(_fornecedorApp.GetAll(), "FornecedorID", "Nome", produto.FornecedorID);
             return View(produto);
         }
 

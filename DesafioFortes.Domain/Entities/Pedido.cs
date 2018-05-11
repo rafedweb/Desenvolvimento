@@ -12,10 +12,20 @@ namespace DesafioFortes.Domain.Entities
         public DateTime DataPedido { get; set; }
         public decimal ValorTotal { get; set; }
         public int QuantidadeProdutos { get; set; }
-        public List<int> ProdutoID { get; set; }
+        public int ProdutoID { get; set; }
         public int FornecedorID { get; set; }
 
         public virtual List<Produto> Produtos { get; set; }
         public virtual Fornecedor Fornecedor { get; set; }
+
+        public int TotalProdutos(List<int> Produtos)
+        {
+            return Produtos.Count();
+        }
+
+        public decimal ObterValorTotal(List<Produto> Produtos)
+        {
+            return Produtos.Select(p => p.Valor).Sum();
+        }
     }
 }
