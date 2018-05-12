@@ -9,5 +9,6 @@ namespace DesafioFortes.Application.Interface
 {
    public  interface IPedidoAppService : IAppServiceBase<Pedido>
     {
+        IEnumerable<Pedido> ObterPedidosPorFornecedor(int fornecedorID);
     }
 }

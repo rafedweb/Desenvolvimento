@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace DesafioFortes.Domain.Interfaces.Services
 {
    public  interface IPedidoService : IServiceBase<Pedido>
-    {        
+    {
+        IEnumerable<Pedido> ObterPedidosPorFornecedor(int fornecedorID);
     }
 }

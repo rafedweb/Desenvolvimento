@@ -12,7 +12,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.DataPedido)
+            Data do pedido
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ValorTotal)
+            Total do Pedido
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.QuantidadeProdutos)
+            Qtd Itens
         </dt>
 
         <dd>
@@ -36,22 +36,37 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FornecedorID)
+            Fornecedor
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FornecedorID)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Produtos)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Produtos)
-        </dd>
+            @Html.DisplayFor(model => model.Fornecedor.RazaoSocial)
+        </dd>           
 
     </dl>
+    <table class="table">
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+               Valor
+            </th>                      
+        </tr>
+
+        @foreach (var item in Model.Produtos)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Valor)
+                </td>                             
+            </tr>
+        }
+
+    </table>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.PedidoID }) |

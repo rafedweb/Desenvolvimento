@@ -11,10 +11,9 @@ namespace DesafioFortes.Domain.Entities
         public int PedidoID { get; set; }
         public DateTime DataPedido { get; set; }
         public decimal ValorTotal { get; set; }
-        public int QuantidadeProdutos { get; set; }
-        public List<Produto> podutos { get; set; }
+        public int QuantidadeProdutos { get; set; }     
 
-        public int ProdutoID { get; set; }
+        //public int ProdutoID { get; set; }
         public int FornecedorID { get; set; }
 
         public virtual List<Produto> Produtos { get; set; }
@@ -29,5 +28,6 @@ namespace DesafioFortes.Domain.Entities
         {
             return Produtos.Select(p => p.Valor).Sum();
         }
+        
     }
 }

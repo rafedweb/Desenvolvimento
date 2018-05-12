@@ -1,5 +1,5 @@
 ﻿@model DesafioFortes.MVC.ViewModels.PedidoViewModel
-
+@using DesafioFortes.Domain.Entities;
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -56,29 +56,27 @@
             <div class="col-md-offset-2 col-md-10">
                 <input type="button" value="Adicionar Item" class="btn btn-default" onclick="AddItemPedido(1)"/>
             </div>
-        </div> 
-
+        </div>
+       
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="button" value="Create" class="btn btn-default" onclick="AddIPedido()"/>
             </div>
         </div>
     </div>
 }
 <div class="content">
-    <div class="ui ui-datatable">
+    <div >
         <div id="tabela">
-            <div class="ui basic segment" style="padding: 50px">
-                <div class="ui active inverted dimmer">
-                    <div class="ui text loader">Carregando</div>
+            <div  style="padding: 50px">
+                <div >
+                    <div>Carregando</div>
                 </div>
                 <p></p>
             </div>
         </div>
     </div>
 </div> 
-
-@*@Html.Partial("_ListaProdutos")*@
 
 <div>
     @Html.ActionLink("Back to List", "Index")

@@ -1,6 +1,6 @@
 ﻿//$(function () {
-//    loadList();
-   
+//    //loadList();
+     
 //});
 
 var item = [];
@@ -20,25 +20,61 @@ function loadList(ids) {
     });
 }
 
-//function AddItemPedido(id) {
-//    var Itens = [];
-//     $.ajax({
-//        type: 'POST',
-//        url: '/Pedido/AddItensPedido',
-//        data: { produtoID: id }
-//    }).done(function () {
-//        loadList();
-//    }).fail(function (error) {        
-//    });
+function AddIPedido() {
+    var itens = [];
 
-//}
+    $('#tabelaBanco tbody tr').each(function () {
+        var colunas = $(this).children();
+
+        var produto = {
+            'ProdutoID': $(colunas[0]).text(),
+            'Nome': $(colunas[1]).text(),
+            'Valor': $(colunas[2]).text(),
+            'Disponivel': true,
+            'FornecedorID': $(colunas[3]).text(),
+            'Fornecedor': null
+            
+        }
+
+        var id = $(colunas[0]).text();
+        itens.push(produto);
+    });
+
+    var pedido = {
+        'PedidoID': 0,
+        'DataPedido': $('#DataPedido').val(),
+        'ValorTotal': $('#ValorTotal').val(),
+        'QuantidadeProdutos': $('#QuantidadeProdutos').val(),
+        'ProdutoID': $('#ProdutoID').val(),
+        'FornecedorID': $('#FornecedorID').val(),
+        'Produtos': itens
+    }
+
+     $.ajax({
+        type: 'POST',
+        url: '/Pedido/Create',
+        data: {
+            pedido: pedido            
+        }
+    }).done(function () {
+        //
+    }).fail(function (error) {        
+    });
+
+}
 
 function AddItemPedido() {       
     item.push($("#ProdutoID option:selected").val());
-    loadList(item);
+    loadList(item);   
+
 }
 
 function RemoveItemPedido(id) {
     item.pop(id);
+    if (item.length <= 0) {
+        location.reload();
+    }
     loadList(item);
 }
+
+

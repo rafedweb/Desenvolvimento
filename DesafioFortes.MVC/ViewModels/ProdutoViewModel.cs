@@ -12,14 +12,14 @@ namespace DesafioFortes.MVC.ViewModels
         [Key]
         public int ProdutoID { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo nome")]
+        //[Required(ErrorMessage = "Preencha o campo nome")]
         [MaxLength(250, ErrorMessage = "Maximo {0} caracteres")]
         [MinLength(2, ErrorMessage = "Minimo {0} caracteres")]
         public string Nome { get; set; }
 
-        [DataType(DataType.Currency)]
-        [Range(typeof(decimal), "0", "99999999999999")]
-        [Required(ErrorMessage ="Preencha o valor")]
+        //[DataType(DataType.Currency)]
+        //[Range(typeof(decimal), "0", "99999999999999")]
+        //[Required(ErrorMessage ="Preencha o valor")]
         public decimal Valor { get; set; }
 
         [DisplayName("Disponível?")]

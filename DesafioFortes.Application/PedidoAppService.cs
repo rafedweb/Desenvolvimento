@@ -18,5 +18,11 @@ namespace DesafioFortes.Application
         {
             _pedidoService = pedidoService;
         }
+
+       
+        public IEnumerable<Pedido> ObterPedidosPorFornecedor(int fornecedorID)
+        {
+            return _pedidoService.GetAll().Where(p => p.FornecedorID == fornecedorID);
+        }
     }
 }

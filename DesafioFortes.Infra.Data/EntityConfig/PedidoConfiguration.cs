@@ -18,9 +18,9 @@ namespace DesafioFortes.Infra.Data.EntityConfig
                .WithMany()
                .HasForeignKey(p => p.FornecedorID);
 
-            HasRequired(p => p.Produtos)
-               .WithMany()
-               .HasForeignKey(p => p.ProdutoID);
+            //HasRequired(p => p.Produtos)
+            //   .WithMany()
+            //   .HasForeignKey(p => p.Produtos);
         }
     }
 }

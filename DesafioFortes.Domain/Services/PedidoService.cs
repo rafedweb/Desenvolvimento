@@ -19,5 +19,11 @@ namespace DesafioFortes.Domain.Services
             _pedidoRepository = pedidoRepository;
         }
 
+        IEnumerable<Pedido> IPedidoService.ObterPedidosPorFornecedor(int fornecedorID)
+        {
+            throw new NotImplementedException();
+        }
+            
+        
     }
 }

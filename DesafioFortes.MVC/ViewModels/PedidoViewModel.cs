@@ -14,16 +14,13 @@ namespace DesafioFortes.MVC.ViewModels
 
         public DateTime DataPedido { get; set; }
 
-        [DataType(DataType.Currency)]
-        [Range(typeof(decimal), "0", "99999999999999")]
-        [Required(ErrorMessage = "Preencha o valor")]
+        //[DataType(DataType.Currency)]
+        //[Range(typeof(decimal), "0", "99999999999999")]       
         public decimal ValorTotal { get; set; }
 
-        public int QuantidadeProdutos { get; set; }
-        public List<Produto> podutos { get; set; }
+        public int QuantidadeProdutos { get; set; } 
 
-
-        public int ProdutoID { get; set; }
+        //public int ProdutoID { get; set; }
         public int FornecedorID { get; set; }
 
         public virtual List<Produto> Produtos { get; set; }
