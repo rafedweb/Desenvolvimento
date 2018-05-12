@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DesafioFortes.MVC.ViewModels.PedidoViewModel>
+
+@{
+    ViewBag.Title = "ListarPedidoPorFornecedor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListarPedidoPorFornecedor</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPedido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValorTotal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantidadeProdutos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FornecedorID)
+        </th>        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataPedido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValorTotal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuantidadeProdutos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FornecedorID)
+        </td>       
+    </tr>
+}
+
+</table>

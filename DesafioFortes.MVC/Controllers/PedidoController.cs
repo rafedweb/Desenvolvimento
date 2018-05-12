@@ -29,6 +29,8 @@ namespace ProjetoModeloDDD.MVC.Controllers
         public ActionResult Index()
         {
             var pedidoViewModel = Mapper.Map<IEnumerable<Pedido>, IEnumerable<PedidoViewModel>>(_pedidoAPP.GetAll());
+            ViewBag.FornecedorID = new SelectList(_fornecedorAPP.GetAll(), "FornecedorID", "RazaoSocial");
+
             return View(pedidoViewModel);
         }
 

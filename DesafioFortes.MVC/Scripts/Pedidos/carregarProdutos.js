@@ -20,6 +20,22 @@ function loadList(ids) {
     });
 }
 
+
+function ListaPedidoPorFornecedor() {
+    var id = $("#FornecedorID option:selected").val();
+    $.ajax({
+        type: 'POST',
+        url: '/Pedido/ListarPedidoPorFornecedor',
+        data: {
+            fornecedorID: id
+        }
+    }).done(function (data) {
+        $('#tabela').html(data);
+    }).fail(function (error) {
+        $('#loader').transition('fade');
+    });
+}
+
 function AddIPedido() {
     var itens = [];
 

@@ -218,6 +218,7 @@
     <Content Include="Views\Fornecedor\Edit.cshtml" />
     <Content Include="Views\Fornecedor\Delete.cshtml" />
     <Content Include="Views\Pedido\_ListaProdutos.cshtml" />
+    <Content Include="Views\Pedido\ListarPedidoPorFornecedor.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

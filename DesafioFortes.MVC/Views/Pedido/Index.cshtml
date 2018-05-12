@@ -10,6 +10,15 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+<div class="form-group">
+    @Html.Label("Fornecedor", htmlAttributes: new { @class = "control-label col-md-2" })
+    <div class="col-md-10">
+        @Html.DropDownList("FornecedorID", string.Empty)       
+    </div>
+    <input type="button" value="Listar Pedidos" class="btn btn-default" onclick="ListaPedidoPorFornecedor()"/>
+</div>
+
 <table class="table">
     <tr>
         <th>
@@ -50,3 +59,5 @@
 }
 
 </table>
+
+
