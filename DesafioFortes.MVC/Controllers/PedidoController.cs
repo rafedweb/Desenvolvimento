@@ -28,10 +28,18 @@ namespace ProjetoModeloDDD.MVC.Controllers
         // GET: Pedido
         public ActionResult Index()
         {
-            var pedidoViewModel = Mapper.Map<IEnumerable<Pedido>, IEnumerable<PedidoViewModel>>(_pedidoAPP.GetAll());
-            ViewBag.FornecedorID = new SelectList(_fornecedorAPP.GetAll(), "FornecedorID", "RazaoSocial");
+            var pedidoViewModel = Mapper.Map<IEnumerable<Pedido>, IEnumerable<PedidoViewModel>>(_pedidoAPP.GetAll());           
 
             return View(pedidoViewModel);
+        }
+       
+        public ActionResult ListarPorFornecedor(int id)
+        {
+            var pedidoViewModel = Mapper.Map<IEnumerable<Pedido>, IEnumerable<PedidoViewModel>>(_pedidoAPP.ObterPedidosPorFornecedor(id));
+
+            ViewBag.FornecedorID = new SelectList(_fornecedorAPP.GetAll(), "FornecedorID", "RazaoSocial");
+            return View(pedidoViewModel);
+
         }
 
         // GET: Pedido/Details/5
@@ -55,21 +63,19 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [HttpPost]
         public ActionResult Create(PedidoViewModel pedido)
         {
-            //pedido.Produtos = new List<Produto>();
+            
             DateTime localDate = DateTime.Now;
             pedido.DataPedido = localDate;
             foreach (var item in pedido.Produtos)
             {
                 item.Fornecedor = _fornecedorAPP.GetAll().First();
             }
-            //if (ModelState.IsValid)
-           // {                
+                          
                 var pedidoDomain = Mapper.Map<PedidoViewModel, Pedido>(pedido);
                                             
                 _pedidoAPP.Add(pedidoDomain);
                
-          // }
-
+          
             ViewBag.FornecedorID = new SelectList(_fornecedorAPP.GetAll(), "FornecedorID", "RazaoSocial", pedido.FornecedorID);
             ViewBag.ProdutoID = new SelectList(_produtoApp.GetAll(), "ProdutoID", "Nome");
             return View();
@@ -121,15 +127,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
 
             return RedirectToAction("Index");
         }
-
-        [HttpPost]
-        public ActionResult ListarPedidoPorFornecedor(int fornecedorID)
-        {
-            var pedidoViewModel = Mapper.Map<IEnumerable<Pedido>, IEnumerable<PedidoViewModel>>(_pedidoAPP.ObterPedidosPorFornecedor(fornecedorID));
-
-            return View(pedidoViewModel);
-
-        }
+               
 
         [HttpPost]
         public ActionResult ListaProdutos(List<string> items)

@@ -11,14 +11,6 @@
     @Html.ActionLink("Create New", "Create")
 </p>
 
-<div class="form-group">
-    @Html.Label("Fornecedor", htmlAttributes: new { @class = "control-label col-md-2" })
-    <div class="col-md-10">
-        @Html.DropDownList("FornecedorID", string.Empty)       
-    </div>
-    <input type="button" value="Listar Pedidos" class="btn btn-default" onclick="ListaPedidoPorFornecedor()"/>
-</div>
-
 <table class="table">
     <tr>
         <th>
@@ -53,11 +45,15 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PedidoID }) |
             @Html.ActionLink("Details", "Details", new { id=item.PedidoID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.PedidoID })
+            @Html.ActionLink("Delete", "Delete", new { id=item.PedidoID }) |
+            @Html.ActionLink("Listar Por Fornecedor", "ListarPorFornecedor", new { id = item.FornecedorID })
         </td>
     </tr>
 }
 
 </table>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/Pedidos/carregarProdutos.js"></script>
 
 

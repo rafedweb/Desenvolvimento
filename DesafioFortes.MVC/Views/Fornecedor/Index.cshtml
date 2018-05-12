@@ -33,32 +33,33 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RazaoSocial)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CNPJ)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UF)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EmailContato)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomeContato)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ativo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.FornecedorID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.FornecedorID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.FornecedorID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RazaoSocial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CNPJ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailContato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeContato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.FornecedorID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FornecedorID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.FornecedorID })                
+            </td>
+        </tr>
+    }
 
 </table>

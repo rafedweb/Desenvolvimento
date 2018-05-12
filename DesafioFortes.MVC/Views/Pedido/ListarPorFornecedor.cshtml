@@ -1,15 +1,15 @@
 ﻿@model IEnumerable<DesafioFortes.MVC.ViewModels.PedidoViewModel>
 
 @{
-    ViewBag.Title = "ListarPedidoPorFornecedor";
+    ViewBag.Title = "ListarPorFornecedor";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ListarPedidoPorFornecedor</h2>
+<h2>ListarPorFornecedor</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
 <table class="table">
     <tr>
         <th>
@@ -23,7 +23,8 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.FornecedorID)
-        </th>        
+        </th>
+        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -38,7 +39,7 @@
             @Html.DisplayFor(modelItem => item.QuantidadeProdutos)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.FornecedorID)
+            @Html.DisplayFor(modelItem => item.Fornecedor.RazaoSocial)
         </td>       
     </tr>
 }
