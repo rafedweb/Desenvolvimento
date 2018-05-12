@@ -22,7 +22,7 @@ namespace DesafioFortes.Application
        
         public IEnumerable<Pedido> ObterPedidosPorFornecedor(int fornecedorID)
         {
-            return _pedidoService.GetAll().Where(p => p.FornecedorID == fornecedorID);
+            return _pedidoService.ObterPedidosPorFornecedor(fornecedorID);
         }
     }
 }

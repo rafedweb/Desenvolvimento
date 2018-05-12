@@ -21,7 +21,7 @@ namespace DesafioFortes.Domain.Services
 
         IEnumerable<Pedido> IPedidoService.ObterPedidosPorFornecedor(int fornecedorID)
         {
-            throw new NotImplementedException();
+            return _pedidoRepository.GetAll().Where(p => p.FornecedorID == fornecedorID);
         }
             
         

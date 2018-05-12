@@ -123,7 +123,7 @@ namespace ProjetoModeloDDD.MVC.Controllers
         [HttpPost]
         public ActionResult ListarPedidoPorFornecedor(int fornecedorID)
         {
-            var pedidoViewModel = Mapper.Map<Pedido, PedidoViewModel>(_pedidoAPP.ObterPedidosPorFornecedor(fornecedorID));
+            var pedidoViewModel = Mapper.Map<IEnumerable<Pedido>, IEnumerable<PedidoViewModel>>(_pedidoAPP.ObterPedidosPorFornecedor(fornecedorID));
 
             return View(pedidoViewModel);
 
